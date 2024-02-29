@@ -1,0 +1,34 @@
+export 'package:flutter_screenutil/flutter_screenutil.dart';
+export 'package:online_shop/models/sneaker_model.dart';
+export 'package:online_shop/provider/cart_provider.dart';
+export 'package:online_shop/provider/favorite_provider.dart';
+export 'package:online_shop/provider/product_provider.dart';
+export 'package:online_shop/utils/app_style.dart';
+export 'package:online_shop/utils/colors.dart';
+export 'package:online_shop/views/shared/checkout_btn.dart';
+export 'package:online_shop/views/shared/reusable_text.dart';
+export 'package:online_shop/views/ui/favorites.dart';
+export 'package:provider/provider.dart';
+export 'package:online_shop/views/shared/latest_shoes.dart';
+export 'package:font_awesome_flutter/font_awesome_flutter.dart';
+export 'package:online_shop/views/shared/category_btn.dart';
+export 'package:online_shop/views/ui/product_page.dart';
+export 'package:online_shop/views/shared/custom_spacer.dart';
+export 'package:online_shop/views/shared/product_card.dart';
+export 'package:online_shop/views/ui/product_by_cart.dart';
+export 'package:online_shop/views/shared/new_shoes.dart';
+export  'package:online_shop/views/shared/home_widget.dart';
+export 'package:online_shop/provider/main_screen_provider.dart';
+export 'package:online_shop/views/ui/mainscreen.dart';
+export  'package:flutter_slidable/flutter_slidable.dart';
+export  'package:ionicons/ionicons.dart';
+export  'package:online_shop/views/shared/bottom_nav.dart';
+export  'package:online_shop/views/ui/cart.dart';
+export  'package:online_shop/views/ui/homepage.dart';
+export  'package:online_shop/views/ui/profile.dart';
+export  'package:online_shop/models/constants.dart';
+export  'package:online_shop/views/ui/searchpage.dart';
+export  'package:online_shop/views/shared/stagger_tile.dart';
+export  'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+
+

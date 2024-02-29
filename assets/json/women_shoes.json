@@ -1,0 +1,128 @@
+[
+    {
+        "id": "0",
+        "name": "UltraBoost Shoes",
+        "category": "Women's Running",
+        "imageUrl": [
+            "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/4d70b4f376484ea3a7b3af1b0177f285_9366/Web_BOOST_Shoes_White_HR0085_04_standard.jpg",
+            "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/bc766f974faa46d0a05caf6c00fb27ba_9366/MECH_DUNE_SHOES_Grey_GB2577_01_standard.jpg"
+        ],
+        "oldPrice": "1899.00",
+        "sizes": [
+            {"size": "6.0", "isSelected": false},
+            {"size": "6.5", "isSelected": false},
+            {"size": "7.0", "isSelected": false},
+            {"size": "7.5", "isSelected": false},
+            {"size": "8.5", "isSelected": false},
+            {"size": "9.0", "isSelected": false}
+        ],
+        "price": "79.00",
+        "description": "Put some pep in your step with the adidas UltraBoost Shoes. Designed for runners, these shoes feature cooling ventilations to keep your feet comfortable during long runs.",
+        "title": "Adidas UltraBoost Running Shoes"
+    },
+    {
+        "id": "1",
+        "name": "UltraBoost Shoes",
+        "category": "Women's Running",
+        "imageUrl": [
+            "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/e4f1fb3f1ea1429cbea0077cd9cdfd4e_9366/Courtflash_Speed_Tennis_Shoes_Black_IG9537_01_standard.jpg",
+            "https://assets.ajio.com/medias/sys_master/root/20230306/EtRf/6406065faeb26924e3a72d40/adidas-white-running-response-lace-up-running-shoes.jpg"
+        ],
+        "oldPrice": "1899.00",
+        "sizes": [
+            {"size": "6.0", "isSelected": false},
+            {"size": "6.5", "isSelected": false},
+            {"size": "7.0", "isSelected": false},
+            {"size": "7.5", "isSelected": false},
+            {"size": "8.5", "isSelected": false},
+            {"size": "9.0", "isSelected": false}
+        ],
+        "price": "99.00",
+        "description": "Put some pep in your step with the adidas UltraBoost Shoes. Designed for runners, these shoes feature cooling ventilations to keep your feet comfortable during long runs.",
+        "title": "Adidas UltraBoost Running Shoes"
+    },
+    {
+        "id": "2",
+        "name": "UltraBoost Shoes",
+        "category": "Women's Running",
+        "imageUrl": [
+            "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/7ed0855435194229a525aad6009a0497_9366/Superstar_Shoes_White_EG4958_01_standard.jpg",
+            "https://assets.ajio.com/medias/sys_master/root/20230719/c43i/64b80eb8eebac147fc7b5d0c/adidas-white-running-men-galaxy-6-lace-up-running-shoes.jpg"
+        ],
+        "oldPrice": "1899.00",
+        "sizes": [
+            {"size": "6.0", "isSelected": false},
+            {"size": "6.5", "isSelected": false},
+            {"size": "7.0", "isSelected": false},
+            {"size": "7.5", "isSelected": false},
+            {"size": "8.5", "isSelected": false},
+            {"size": "9.0", "isSelected": false}
+        ],
+        "price": "89.00",
+        "description": "Put some pep in your step with the adidas UltraBoost Shoes. Designed for runners, these shoes feature cooling ventilations to keep your feet comfortable during long runs.",
+        "title": "Adidas UltraBoost Running Shoes"
+    },
+    {
+        "id": "3",
+        "name": "UltraBoost Shoes",
+        "category": "Women's Running",
+        "imageUrl": [
+            "https://assets.ajio.com/medias/sys_master/root/20230807/vXej/64d0bd65a9b42d15c9914477/adidas-white-tennis-men-gamecourt-2-m-lace-up-tennis-shoes.jpg",
+            "https://assets.ajio.com/medias/sys_master/root/20231229/B9GG/658ebb6cafa4cf41f5f5bf8b/adidas-white-tennis-men-grand-court-base-3.0-tennis-sports-shoes.jpg"
+        ],
+        "oldPrice": "1899.00",
+        "sizes": [
+            {"size": "6.0", "isSelected": false},
+            {"size": "6.5", "isSelected": false},
+            {"size": "7.0", "isSelected": false},
+            {"size": "7.5", "isSelected": false},
+            {"size": "8.5", "isSelected": false},
+            {"size": "9.0", "isSelected": false}
+        ],
+        "price": "79.00",
+        "description": "Put some pep in your step with the adidas UltraBoost Shoes. Designed for runners, these shoes feature cooling ventilations to keep your feet comfortable during long runs.",
+        "title": "Adidas UltraBoost Running Shoes"
+    },
+    {
+        "id": "4",
+        "name": "UltraBoost Shoes",
+        "category": "Women's Running",
+        "imageUrl": [
+            "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/7ed0855435194229a525aad6009a0497_9366/Superstar_Shoes_White_EG4958_01_standard.jpg",
+            "https://assets.adidas.com/images/w_600,f_auto,q_auto/f6f2bd794a7a4b50b109aebd00c86ebd_9366/PRIMIERTO_SHOES_Black_GA1187_01_standard.jpg"
+        ],
+        "oldPrice": "1899.00",
+        "sizes": [
+            {"size": "6.0", "isSelected": false},
+            {"size": "6.5", "isSelected": false},
+            {"size": "7.0", "isSelected": false},
+            {"size": "7.5", "isSelected": false},
+            {"size": "8.5", "isSelected": false},
+            {"size": "9.0", "isSelected": false}
+        ],
+        "price": "79.00",
+        "description": "Put some pep in your step with the adidas UltraBoost Shoes. Designed for runners, these shoes feature cooling ventilations to keep your feet comfortable during long runs.",
+        "title": "Adidas UltraBoost Running Shoes"
+    },
+    {
+        "id": "5",
+        "name": "UltraBoost Shoes",
+        "category": "Women's Running",
+        "imageUrl": [
+            "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/b083251bacc0438b97dbaf37017a71d2_9366/Alphabounce_Bounce_Shoes_White_HP6139_01_standard.jpg",
+            "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/b083251bacc0438b97dbaf37017a71d2_9366/Alphabounce_Bounce_Shoes_White_HP6139_01_standard.jpg"
+        ],
+        "oldPrice": "1899.00",
+        "sizes": [
+            {"size": "6.0", "isSelected": false},
+            {"size": "6.5", "isSelected": false},
+            {"size": "7.0", "isSelected": false},
+            {"size": "7.5", "isSelected": false},
+            {"size": "8.5", "isSelected": false},
+            {"size": "9.0", "isSelected": false}
+        ],
+        "price": "79.00",
+        "description": "Put some pep in your step with the adidas UltraBoost Shoes. Designed for runners, these shoes feature cooling ventilations to keep your feet comfortable during long runs.",
+        "title": "Adidas UltraBoost Running Shoes"
+    }
+]
