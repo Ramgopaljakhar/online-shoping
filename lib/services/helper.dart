@@ -1,7 +1,6 @@
-// ignore_for_file: avoid_types_as_parameter_names, non_constant_identifier_names
-
 import 'package:flutter/services.dart' as the_bundle;
 import 'package:online_shop/models/sneaker_model.dart';
+
 
 class Helper {
   Future<List<SneakersModel>> getMaleSneakers() async {
@@ -26,32 +25,58 @@ class Helper {
     return kidsList;
   }
 
-//single male
+  Future<List<SneakersModel>> getSearchSneakers() async {
+    final data =
+        await the_bundle.rootBundle.loadString("assets/json/search_shoes.json");
+
+    final searchList = sneakersModelFromJson(data);
+    return searchList;
+  }
+
+  // Get single male sneaker by ID
   Future<SneakersModel> getMaleSneakersById(String id) async {
     final data =
         await the_bundle.rootBundle.loadString("assets/json/men_shoes.json");
     final maleList = sneakersModelFromJson(data);
-    final sneaker =
-        maleList.firstWhere((SneakersModel) => SneakersModel.id == id);
+    final sneaker = maleList.firstWhere((sneaker) => sneaker.id == id);
     return sneaker;
   }
 
-  //single female
-  Future<SneakersModel> getfeMaleSneakersById(String id) async {
+  // Get single female sneaker by ID
+  Future<SneakersModel> getFemaleSneakersById(String id) async {
     final data =
         await the_bundle.rootBundle.loadString("assets/json/women_shoes.json");
-    final maleList = sneakersModelFromJson(data);
-    final sneaker =
-        maleList.firstWhere((SneakersModel) => SneakersModel.id == id);
+    final femaleList = sneakersModelFromJson(data);
+    final sneaker = femaleList.firstWhere((sneaker) => sneaker.id == id);
     return sneaker;
   }
 
-  //single male
+  // Get single kids sneaker by ID
   Future<SneakersModel> getKidsSneakersById(String id) async {
-    final data = await the_bundle.rootBundle.loadString("assets/json/kids_shoes.json");
-    final maleList = sneakersModelFromJson(data);
-    final sneaker =
-        maleList.firstWhere((SneakersModel) => SneakersModel.id == id);
+    final data =
+        await the_bundle.rootBundle.loadString("assets/json/kids_shoes.json");
+    final kidsList = sneakersModelFromJson(data);
+    final sneaker = kidsList.firstWhere((sneaker) => sneaker.id == id);
     return sneaker;
   }
+
+  // Get single search sneaker by ID
+  Future<SneakersModel> getSearchSneakerById(String id) async {
+    final data =
+        await the_bundle.rootBundle.loadString("assets/json/search_shoes.json");
+    final searchList = sneakersModelFromJson(data);
+    final sneaker = searchList.firstWhere((sneaker) => sneaker.id == id);
+    return sneaker;
+  }
+
+  // Future<List<SneakersModel>> Search(String searchQuery) async {
+  //   var url = Uri.http(Confing.apiUrl, "${Confing.search}$searchQuery");
+  //   var response = await Client.get(url);
+  //   if (response.statusCode == 200) {
+  //     final results = sneakersModelFromJson(response.body);
+  //     return results;
+  //   } else {
+  //     throw Exception('Failed get sneakers list');
+  //   }
+  // }
 }
