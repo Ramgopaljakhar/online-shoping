@@ -2,14 +2,14 @@ import 'package:online_shop/views/shared/export.dart';
 import 'package:online_shop/views/shared/export_package.dart';
 
 class MainScreen extends StatelessWidget {
-  const MainScreen({super.key});
+  MainScreen({super.key});
 
-  final List<Widget> pageList = const [
-    HomePage(),
-    SearchPage(),
-    FavoritesPage(),
-    CartPage(),
-    ProfilePage()
+  final List<Widget> pageList = [
+    const HomePage(),
+    SearchPage(male: Future<List<SneakersModel>>.value([]), tabIndex: 1),
+    const FavoritesPage(),
+    const CartPage(),
+    const ProfilePage()
   ];
 
   @override

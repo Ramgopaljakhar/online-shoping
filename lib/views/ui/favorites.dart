@@ -119,7 +119,7 @@ class _FavoritesPageState extends State<FavoritesPage> {
                                   Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                        builder: (context) => const MainScreen(),
+                                        builder: (context) =>  MainScreen(),
                                       ));
                                 },
                                 child: const Icon(Ionicons.heart_dislike_sharp),
