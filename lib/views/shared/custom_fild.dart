@@ -11,6 +11,7 @@ Widget customField({
   Widget? suffixIcon,
   Widget? prefixIcon,
   void Function()? onEditingComplete,
+ Function(String)? onChange,
   bool? obscureText,
 }) {
   return Container(
@@ -24,6 +25,7 @@ Widget customField({
       keyboardType: keyboard,
       obscureText: obscureText ?? false,
       onEditingComplete: onEditingComplete,
+      onChanged:onChange,
       decoration: InputDecoration(
         border: InputBorder.none,
         hintText: hintText,

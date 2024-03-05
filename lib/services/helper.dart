@@ -1,7 +1,6 @@
 import 'package:flutter/services.dart' as the_bundle;
 import 'package:online_shop/models/sneaker_model.dart';
 
-
 class Helper {
   Future<List<SneakersModel>> getMaleSneakers() async {
     final data =
@@ -25,13 +24,20 @@ class Helper {
     return kidsList;
   }
 
-  Future<List<SneakersModel>> getSearchSneakers() async {
-    final data =
-        await the_bundle.rootBundle.loadString("assets/json/search_shoes.json");
-     
-    final searchList = sneakersModelFromJson(data);
-    return searchList;
-  }
+ Future<List<SneakersModel>> combineSneakersData() async {
+  List<SneakersModel> commonArray = [];
+
+  final maleList = await getMaleSneakers();
+  final femaleList = await getFemaleSneakers();
+  final kidsList = await getKidsSneakers();
+
+  commonArray.addAll(maleList);
+  commonArray.addAll(femaleList);
+  commonArray.addAll(kidsList);
+
+  return commonArray;
+}
+
 
   // Get single male sneaker by ID
   Future<SneakersModel> getMaleSneakersById(String id) async {

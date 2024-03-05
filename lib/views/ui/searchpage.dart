@@ -17,6 +17,7 @@ class _SearchPageState extends State<SearchPage> {
   @override
   Widget build(BuildContext context) {
     var productProvider = Provider.of<ProductProvider>(context);
+
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
@@ -27,7 +28,7 @@ class _SearchPageState extends State<SearchPage> {
         title: customField(
           hintText: 'Search for a product',
           controller: search,
-          onEditingComplete: () {
+          onChange: (String val) {
             setState(() {});
           },
           prefixIcon: GestureDetector(
@@ -42,42 +43,42 @@ class _SearchPageState extends State<SearchPage> {
           ),
         ),
       ),
-      body: search.text.isEmpty
-          ? Container(
-              height: 600,
-              width: MediaQuery.of(context).size.width,
-              padding: const EdgeInsets.all(10),
-              margin: const EdgeInsets.only(right: 5),
-              child: Image.asset(
-                'assets/images/pose23.png',
-                fit: BoxFit.cover,
-              ),
-            )
-          : FutureBuilder<List<SneakersModel>>(
-              future: widget
-                  .names, // Accessing widget.name instead of name directly
-              builder: (context, snapshot) {
-                if (snapshot.connectionState == ConnectionState.waiting) {
-                  return const Center(child: CircularProgressIndicator());
-                } else if (snapshot.hasError) {
-                  return const Center(
-                    child: Text('Error Retrieving the data'),
-                  );
-                } else if (snapshot.data!.isEmpty) {
-                  return const Center(
-                    child: Text('Product not found'),
-                  );
-                } else {
-                  final shoes = snapshot.data!;
-                  final filteredShoes = shoes
-                      .where((shoe) => shoe.name
-                          .toLowerCase()
-                          .contains(search.text.toLowerCase()))
-                      .toList();
-                  return ListView.builder(
+      body: FutureBuilder<List<SneakersModel>>(
+        future: Helper().combineSneakersData(),
+        builder: (context, snapshot) {
+          print(snapshot.data);
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return const Center(child: CircularProgressIndicator());
+          } else if (snapshot.hasError) {
+            return const Center(
+              child: Text('Error Retrieving the data'),
+            );
+          } else if (snapshot.data!.isEmpty) {
+            return const Center(
+              child: Text('Product not found'),
+            );
+          } else {
+            final shoes = snapshot.data!;
+            final filteredShoes = shoes
+                .where((shoe) =>
+                    shoe.name.toLowerCase().contains(search.text.toLowerCase()))
+                .toList();
+            return filteredShoes.isEmpty
+                ? Container(
+                    height: 600,
+                    width: MediaQuery.of(context).size.width,
+                    padding: const EdgeInsets.all(10),
+                    margin: const EdgeInsets.only(right: 5),
+                    child: Image.asset(
+                      'assets/images/pose23.png',
+                      fit: BoxFit.cover,
+                    ),
+                  )
+                : ListView.builder(
                     itemCount: filteredShoes.length,
                     itemBuilder: (context, index) {
                       final shoe = filteredShoes[index];
+
                       return GestureDetector(
                         onTap: () {
                           productProvider.shoesSizes = shoe.sizes;
@@ -166,9 +167,10 @@ class _SearchPageState extends State<SearchPage> {
                       );
                     },
                   );
-                }
-              },
-            ),
+          }
+        },
+      ),
     );
   }
+  
 }

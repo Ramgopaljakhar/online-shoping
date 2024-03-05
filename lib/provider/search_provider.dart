@@ -10,16 +10,17 @@ class SearchProvider extends ChangeNotifier {
   }
 
   Future<void> _loadSneakers() async {
-    _allSneakers = await Helper().getSearchSneakers();
+    _allSneakers = await Helper().combineSneakersData();
   }
 
   List<SneakersModel> get filteredSneakers => _filteredSneakers;
 
   void search(String query) {
-    _filteredSneakers = _allSneakers.where((sneaker) =>
-      sneaker.name.toLowerCase().contains(query.toLowerCase()) ||
-      sneaker.id.toLowerCase() == query.toLowerCase()
-    ).toList();
+    _filteredSneakers = _allSneakers
+        .where((sneaker) =>
+            sneaker.name.toLowerCase().contains(query.toLowerCase()) ||
+            sneaker.id.toLowerCase() == query.toLowerCase())
+        .toList();
     notifyListeners();
   }
 }
