@@ -28,7 +28,7 @@ class Helper {
   Future<List<SneakersModel>> getSearchSneakers() async {
     final data =
         await the_bundle.rootBundle.loadString("assets/json/search_shoes.json");
-
+     
     final searchList = sneakersModelFromJson(data);
     return searchList;
   }
@@ -61,11 +61,11 @@ class Helper {
   }
 
   // Get single search sneaker by ID
-  Future<SneakersModel> getSearchSneakerById(String id) async {
+  Future<SneakersModel> getSearchSneakerById(String name) async {
     final data =
         await the_bundle.rootBundle.loadString("assets/json/search_shoes.json");
     final searchList = sneakersModelFromJson(data);
-    final sneaker = searchList.firstWhere((sneaker) => sneaker.id == id);
+    final sneaker = searchList.firstWhere((sneaker) => sneaker.name == name);
     return sneaker;
   }
 

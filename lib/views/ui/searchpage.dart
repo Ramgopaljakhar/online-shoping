@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:online_shop/services/helper.dart';
 import 'package:online_shop/views/shared/export.dart';
 import 'package:online_shop/views/shared/export_package.dart';
 
 class SearchPage extends StatefulWidget {
-  const SearchPage({super.key, required this.male, required this.tabIndex});
-  final Future<List<SneakersModel>> male;
+  const SearchPage({super.key, required this.names, required this.tabIndex});
+  final Future<List<SneakersModel>> names;
   final int tabIndex;
 
   @override
@@ -17,33 +16,29 @@ class _SearchPageState extends State<SearchPage> {
 
   @override
   Widget build(BuildContext context) {
-    // ignore: unused_local_variable
     var productProvider = Provider.of<ProductProvider>(context);
     return Scaffold(
       backgroundColor: Colors.black,
-      appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(100),
-        child: AppBar(
-          toolbarHeight: 100,
-          automaticallyImplyLeading: false,
-          backgroundColor: Colors.black,
-          elevation: 0,
-          title: customField(
-            hintText: 'Search for a product',
-            controller: search,
-            onEditingComplete: () {
+      appBar: AppBar(
+        toolbarHeight: 100,
+        automaticallyImplyLeading: false,
+        backgroundColor: Colors.black,
+        elevation: 0,
+        title: customField(
+          hintText: 'Search for a product',
+          controller: search,
+          onEditingComplete: () {
+            setState(() {});
+          },
+          prefixIcon: GestureDetector(
+            onTap: () {},
+            child: const Icon(Icons.camera_alt, color: Colors.black),
+          ),
+          suffixIcon: GestureDetector(
+            onTap: () {
               setState(() {});
             },
-            prefixIcon: GestureDetector(
-              onTap: () {},
-              child: const Icon(Icons.camera_alt, color: Colors.black),
-            ),
-            suffixIcon: GestureDetector(
-              onTap: () {
-                setState(() {});
-              },
-              child: const Icon(Icons.search, color: Colors.black),
-            ),
+            child: const Icon(Icons.search, color: Colors.black),
           ),
         ),
       ),
@@ -59,44 +54,114 @@ class _SearchPageState extends State<SearchPage> {
               ),
             )
           : FutureBuilder<List<SneakersModel>>(
-              future: Helper().getSearchSneakers(),
+              future: widget
+                  .names, // Accessing widget.name instead of name directly
               builder: (context, snapshot) {
                 if (snapshot.connectionState == ConnectionState.waiting) {
                   return const Center(child: CircularProgressIndicator());
                 } else if (snapshot.hasError) {
-                  return Center(
-                    child: reusableText(
-                      title: 'Error Retrieving the data',
-                      style: appstyle(16, Colors.black, FontWeight.w700),
-                    ),
+                  return const Center(
+                    child: Text('Error Retrieving the data'),
                   );
                 } else if (snapshot.data!.isEmpty) {
-                  return Center(
-                    child: reusableText(
-                      title: 'Product not found',
-                      style: appstyle(16, Colors.black, FontWeight.w700),
-                    ),
+                  return const Center(
+                    child: Text('Product not found'),
                   );
                 } else {
-                  final shoe = snapshot.data!;
+                  final shoes = snapshot.data!;
+                  final filteredShoes = shoes
+                      .where((shoe) => shoe.name
+                          .toLowerCase()
+                          .contains(search.text.toLowerCase()))
+                      .toList();
                   return ListView.builder(
-                    itemCount: shoe.length,
+                    itemCount: filteredShoes.length,
                     itemBuilder: (context, index) {
-                      final currentShoe = shoe[index];
+                      final shoe = filteredShoes[index];
                       return GestureDetector(
                         onTap: () {
+                          productProvider.shoesSizes = shoe.sizes;
                           Navigator.push(
                             context,
                             MaterialPageRoute(
                               builder: (context) => ProductPage(
-                                id: currentShoe.id,
-                                category: currentShoe.category,
+                                id: shoe.name,
+                                category: shoe.category,
                               ),
                             ),
                           );
                         },
-                        child: ListTile(
-                          title: Text(currentShoe.name),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(11),
+                            child: Container(
+                              height: 90,
+                              width: 325,
+                              decoration: BoxDecoration(
+                                color: Colors.grey[100],
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.grey[500]!,
+                                    blurRadius: 0.3,
+                                    spreadRadius: 5,
+                                    offset: const Offset(0, 1),
+                                  ),
+                                ],
+                              ),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.all(12),
+                                    child: Image.network(
+                                      shoe.imageUrl[0],
+                                      width: 70,
+                                      height: 70,
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(
+                                        top: 11, left: 20),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          shoe.name,
+                                          style: const TextStyle(
+                                            fontSize: 16,
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.w500,
+                                          ),
+                                        ),
+                                        const SizedBox(height: 5),
+                                        Text(
+                                          shoe.category,
+                                          style: const TextStyle(
+                                            fontSize: 11,
+                                            color: Colors.grey,
+                                            fontWeight: FontWeight.w400,
+                                          ),
+                                        ),
+                                        const SizedBox(height: 5),
+                                        Text(
+                                          shoe.price,
+                                          style: const TextStyle(
+                                            fontSize: 13,
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.w400,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
                         ),
                       );
                     },

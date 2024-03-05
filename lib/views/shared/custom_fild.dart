@@ -16,7 +16,7 @@ Widget customField({
   return Container(
     decoration: const BoxDecoration(
       color: white,
-      borderRadius: BorderRadius.all(Radius.circular(11)),
+      borderRadius: BorderRadius.all(Radius.circular(16)),
     ),
     child: TextField(
       key: key,
@@ -34,7 +34,7 @@ Widget customField({
           gray,
           FontWeight.w400,
         ),
-        contentPadding: const EdgeInsets.only(top: 11),
+        contentPadding: const EdgeInsets.only(top: 9),
       ),
     ),
   );

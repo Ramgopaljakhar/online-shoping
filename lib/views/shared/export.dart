@@ -33,3 +33,5 @@ export 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 export 'package:online_shop/views/shared/custom_fild.dart';
 export 'package:online_shop/services/helper.dart';
 export 'package:online_shop/provider/search_provider.dart';
+export 'dart:convert';
+export 'package:flutter/services.dart' show rootBundle;
