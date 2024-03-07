@@ -1,7 +1,6 @@
 import 'package:online_shop/views/shared/export.dart';
 import 'package:online_shop/views/shared/export_package.dart';
 
-
 class LatestShoes extends StatelessWidget {
   const LatestShoes({super.key, required Future<List<SneakersModel>> male})
       : _male = male;
@@ -26,7 +25,7 @@ class LatestShoes extends StatelessWidget {
             crossAxisCount: 2,
             staggeredTileBuilder: (index) => StaggeredTile.extent(
                 (index % 2 == 0) ? 1 : 1,
-                (index % 4 == 1 || index % 4 == 3) ? 285.h : 270.h),
+                (index % 4 == 1 || index % 4 == 3) ? 350.h : 335.h),
             itemBuilder: (context, index) {
               final shoe = snapshot.data![index];
               return StaggerTile(

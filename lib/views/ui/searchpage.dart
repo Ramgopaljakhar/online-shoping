@@ -3,8 +3,7 @@ import 'package:online_shop/views/shared/export.dart';
 import 'package:online_shop/views/shared/export_package.dart';
 
 class SearchPage extends StatefulWidget {
-  const SearchPage({super.key});
-  
+  const SearchPage({Key? key}) : super(key: key);
 
   @override
   State<SearchPage> createState() => _SearchPageState();
@@ -82,83 +81,81 @@ class _SearchPageState extends State<SearchPage> {
                         onTap: () {
                           productProvider.shoesSizes = shoe.sizes;
                           Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => ProductPage(
-                                id: shoe.name,
-                                category: shoe.category,
-                              ),
-                            ),
-                          );
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => ProductPage(
+                                    id: shoe.id, category: shoe.category),
+                              ));
                         },
-                        child: Padding(
-                          padding: const EdgeInsets.all(8),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(11),
-                            child: Container(
-                              height: 90,
-                              width: 325,
-                              decoration: BoxDecoration(
-                                color: Colors.grey[100],
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.grey[500]!,
-                                    blurRadius: 0.3,
-                                    spreadRadius: 5,
-                                    offset: const Offset(0, 1),
-                                  ),
-                                ],
-                              ),
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.all(12),
-                                    child: Image.network(
-                                      shoe.imageUrl[0],
-                                      width: 70,
-                                      height: 70,
-                                      fit: BoxFit.cover,
+                        child: Material(
+                          color: Colors.transparent,
+                          child: Padding(
+                            padding: const EdgeInsets.all(8),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(11),
+                              child: Container(
+                                height: 90,
+                                width: 325,
+                                decoration: BoxDecoration(
+                                  color: Colors.grey[100],
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.grey[500]!,
+                                      blurRadius: 0.3,
+                                      spreadRadius: 5,
+                                      offset: const Offset(0, 1),
                                     ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.only(
-                                        top: 11, left: 20),
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          shoe.name,
-                                          style: const TextStyle(
-                                            fontSize: 16,
-                                            color: Colors.black,
-                                            fontWeight: FontWeight.w500,
-                                          ),
-                                        ),
-                                        const SizedBox(height: 5),
-                                        Text(
-                                          shoe.category,
-                                          style: const TextStyle(
-                                            fontSize: 11,
-                                            color: Colors.grey,
-                                            fontWeight: FontWeight.w400,
-                                          ),
-                                        ),
-                                        const SizedBox(height: 5),
-                                        Text(
-                                          shoe.price,
-                                          style: const TextStyle(
-                                            fontSize: 13,
-                                            color: Colors.black,
-                                            fontWeight: FontWeight.w400,
-                                          ),
-                                        ),
-                                      ],
+                                  ],
+                                ),
+                                child: Row(
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.all(12),
+                                      child: Image.network(
+                                        shoe.imageUrl[0],
+                                        width: 70,
+                                        height: 70,
+                                        fit: BoxFit.cover,
+                                      ),
                                     ),
-                                  ),
-                                ],
+                                    Padding(
+                                      padding: const EdgeInsets.only(
+                                          top: 11, left: 20),
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            shoe.name,
+                                            style: const TextStyle(
+                                              fontSize: 16,
+                                              color: Colors.black,
+                                              fontWeight: FontWeight.w500,
+                                            ),
+                                          ),
+                                          const SizedBox(height: 5),
+                                          Text(
+                                            shoe.category,
+                                            style: const TextStyle(
+                                              fontSize: 11,
+                                              color: Colors.grey,
+                                              fontWeight: FontWeight.w400,
+                                            ),
+                                          ),
+                                          const SizedBox(height: 5),
+                                          Text(
+                                            shoe.price,
+                                            style: const TextStyle(
+                                              fontSize: 13,
+                                              color: Colors.black,
+                                              fontWeight: FontWeight.w400,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           ),
@@ -171,5 +168,4 @@ class _SearchPageState extends State<SearchPage> {
       ),
     );
   }
-  
 }

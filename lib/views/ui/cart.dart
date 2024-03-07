@@ -50,7 +50,7 @@ class CartPage extends StatelessWidget {
                               ),
                               child: Container(
                                 height:
-                                    MediaQuery.of(context).size.height * 0.13,
+                                    MediaQuery.of(context).size.height * 0.15,
                                 width: MediaQuery.of(context).size.width,
                                 decoration: BoxDecoration(
                                   color: gray100,

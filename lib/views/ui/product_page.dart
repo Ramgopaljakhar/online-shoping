@@ -80,8 +80,7 @@ class _ProductPageState extends State<ProductPage> {
                         background: Stack(
                           children: [
                             SizedBox(
-                              height: 401.h,
-                              width: 375.h,
+                              height: 402.h,
                               child: PageView.builder(
                                 controller: pageController,
                                 itemCount: sneaker.imageUrl.length,
@@ -95,13 +94,13 @@ class _ProductPageState extends State<ProductPage> {
                                       Container(
                                         height:
                                             MediaQuery.of(context).size.height *
-                                                0.39,
+                                                0.4,
                                         width:
                                             MediaQuery.of(context).size.width,
                                         color: gray300,
                                         child: Image.network(
                                           sneaker.imageUrl[index],
-                                          fit: BoxFit.cover,
+                                          fit: BoxFit.fill,
                                         ),
                                       ),
                                       Positioned(
@@ -109,7 +108,7 @@ class _ProductPageState extends State<ProductPage> {
                                           top: MediaQuery.of(context)
                                                   .size
                                                   .height *
-                                              0.06,
+                                              0.07,
                                           child: Consumer<FavoritesProvider>(
                                             builder: (context,
                                                 favoritesProvider, child) {
@@ -150,7 +149,7 @@ class _ProductPageState extends State<ProductPage> {
                                         left: 0,
                                         height:
                                             MediaQuery.of(context).size.height *
-                                                0.3,
+                                                0.26,
                                         child: Row(
                                           mainAxisAlignment:
                                               MainAxisAlignment.center,
@@ -159,7 +158,7 @@ class _ProductPageState extends State<ProductPage> {
                                             (index) => Padding(
                                               padding:
                                                   const EdgeInsets.symmetric(
-                                                      horizontal: 4),
+                                                      horizontal: 3),
                                               child: CircleAvatar(
                                                 radius: 5,
                                                 backgroundColor: productProvider
@@ -186,7 +185,7 @@ class _ProductPageState extends State<ProductPage> {
                                 ),
                                 child: Container(
                                   height: MediaQuery.of(context).size.height *
-                                      0.645,
+                                      0.575,
                                   width: MediaQuery.of(context).size.width,
                                   color: white,
                                   child: Padding(

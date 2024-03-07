@@ -46,7 +46,7 @@ class _FavoritesPageState extends State<FavoritesPage> {
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(8),
                       child: Container(
-                        height: MediaQuery.of(context).size.height * 0.13,
+                        height: MediaQuery.of(context).size.height * 0.14,
                         width: MediaQuery.of(context).size.width,
                         decoration: BoxDecoration(
                           color: gray100,
@@ -119,7 +119,7 @@ class _FavoritesPageState extends State<FavoritesPage> {
                                   Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                        builder: (context) =>  MainScreen(),
+                                        builder: (context) => MainScreen(),
                                       ));
                                 },
                                 child: const Icon(Ionicons.heart_dislike_sharp),

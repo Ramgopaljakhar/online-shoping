@@ -115,10 +115,21 @@ class HomeWidget extends StatelessWidget {
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (context, index) {
                       final shoe = snapshot.data![index];
-                      return Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: NewShoes(
-                          imageUrl: shoe.imageUrl[1],
+                      return GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) =>
+                                  ProductByCart(tabIndex: tabIndex),
+                            ),
+                          );
+                        },
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: NewShoes(
+                            imageUrl: shoe.imageUrl[1],
+                          ),
                         ),
                       );
                     },
