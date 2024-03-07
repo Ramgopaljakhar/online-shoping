@@ -21,6 +21,20 @@ class ProductCard extends StatefulWidget {
 }
 
 class _ProductCardState extends State<ProductCard> {
+  final _favBox = Hive.box('fav_box');
+  Future<void> _createFav(Map<String, dynamic> addFav) async {
+    await _favBox.add(addFav);
+  }
+
+  getFavorites() {
+    final favData = _favBox.keys.map((key) {
+      final item = _favBox.get(key);
+      return {"key": key, "id": "id"};
+    }).toList();
+    favor = favData.toList();
+    ids = favor.map((item) => item['id']).toList();
+  }
+
   @override
   Widget build(BuildContext context) {
     var favoritesProvider = Provider.of<FavoritesProvider>(context);
