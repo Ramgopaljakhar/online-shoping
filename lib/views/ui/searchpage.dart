@@ -3,9 +3,8 @@ import 'package:online_shop/views/shared/export.dart';
 import 'package:online_shop/views/shared/export_package.dart';
 
 class SearchPage extends StatefulWidget {
-  const SearchPage({super.key, required this.names, required this.tabIndex});
-  final Future<List<SneakersModel>> names;
-  final int tabIndex;
+  const SearchPage({super.key});
+  
 
   @override
   State<SearchPage> createState() => _SearchPageState();

@@ -28,6 +28,8 @@ Color gray100 = Colors.grey.shade100;
 Color gray200 = Colors.grey.shade200;
 Color gray300 = Colors.grey.shade300;
 Color gray500 = Colors.grey.shade500;
+Color gray600 = Colors.grey.shade600;
+Color gray700 = Colors.grey.shade700;
 const Color lightGray = Color(0xFFE2E2E2);
 
 //black color
